@@ -1,0 +1,459 @@
+/* STYLE AND FONTS */
+.lexend-uniquifier {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 2rem 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #EEEEEE;
+    color:#514A41;
+    z-index: 100;
+    font-family: "Lexend", sans-serif;
+}
+
+.header a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+
+.navbar {
+    display: flex;
+    gap: 50px;
+}
+
+/* to have both navbar and header as flex so it will show it as a line and work */
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+    font-size: var(--nav-size);
+    transition: 0.2s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover{
+    border-bottom: 3px solid #514A41;
+    font-weight: 700;
+}
+/* to get rid of all anchor since it's not working if in og not in anchor*/
+
+
+.logo {
+    font-size: var(--logo-size);
+}
+
+:root {
+    --big-size: clamp(32px, 3.5vw, 48px);
+    --logo-size: clamp(20px, 3.5vw, 32px);
+    --nav-size: clamp(12px, 1.5vw, 20px);
+    --divider-size: clamp(100px, 3.5vw, 12%);
+}
+/* helped by chat gbt */
+
+
+.landing {
+    width: 100%;
+    height: 100vh;   /* full screen height */
+    overflow: hidden;
+}
+
+.landing img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+.showcase{
+    display:flex;
+    height: 95dvh;
+}
+
+.display{
+    width: 40%;
+       /* here conflicted how to do mobile bc everything 
+    set to vh and phone are horizontal; mby in java add max vh??
+    fixed by ai chat gbt
+    */
+    overflow: hidden;
+    background-color: black;
+    padding: 3% 5% 5% 5%;
+    display: grid;
+    grid-template-rows: auto auto; /* Defines two rows google auto ai helped*/
+    gap: 10%;  /*set gap of the bottom two div */
+}
+
+.displaytextup .title{
+    font-family: "Lexend", sans-serif;
+    font-size: var(--big-size);
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6%;
+
+    transition: 0.3s ease-in-out;
+}
+.displaytextup .number{
+    font-family: "Lexend", sans-serif;
+    font-size: var(--big-size);
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6%;
+
+    transition: 0.3s ease-in-out;
+}
+
+
+.displaytext{
+    font-family: "Lexend", sans-serif;
+    font-size: var(--logo-size);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.50);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6%;
+
+    transition: 0.3s ease-in-out;
+    transform: translateX(0); 
+}
+
+/* here I want to have java implicated so jump start it would have the first work 
+displaying (white, bolded, and shift to right)
+and the rest are grayed out indicate user can choose 
+
+ai was able to help below for all the display
+*/
+
+.displaytext .item {
+    color: rgba(255, 0, 0, 0.5);
+    font-weight: 400;
+    transform: translateX(0);
+    transition: 0.3s ease;
+}
+
+.displaytext .item.active {
+    color: rgb(0, 255, 106);
+    font-weight: 700;
+    transform: translateX(5%);
+}
+
+.displaytext .item:hover {
+    color: rgb(188, 55, 255);
+    font-weight: 700;
+    transform: translateX(5%);
+}
+
+.displaytext:hover .item {
+    color: rgba(111, 241, 255, 0.5);
+    font-weight: 400;
+    transform: translateX(0);
+}
+
+
+.displaytext .item:hover {
+    color: rgb(192, 255, 75);
+    font-weight: 700;
+    transform: translateX(5%);
+}
+
+.preview {
+    width: 60%;
+    height: 100%;
+}
+
+.preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#preview-img {
+    transition: opacity .2s ease-in-out;
+}
+
+/* .home {
+    margin: 0;
+    padding: 0;
+}
+
+.landing{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}*/
+
+
+
+/* cookie section below */
+.divider{
+    justify-content: center;
+    align-items: center; 
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    height: 55dvh;
+}
+
+.divider-img ,.divider-img2{
+    width: var(--divider-size);
+}
+
+.divider-img:hover{
+    transition: 0.2s;
+    transform: rotateZ(20deg);  
+}
+
+.divider-img2:hover{
+    transition: 0.2s;
+    transform: rotateZ(-20deg);  
+}
+
+
+
+
+/* chat gbt modified below (deleted original cuz it's showing up as red error for some reason) 
+then i build off and edit to make it work*/
+
+/* .work1, .work2, .work3, .work4{
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    background: white;
+    color: #514A41;
+
+    display: flex;
+    padding: 2%;
+
+    transition: all 0.4s ease;
+} */
+
+
+.organize-work{
+    display:flex;
+    height: 90dvh;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.work1, .work2, .work3, .work4{
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    background: white;
+    color: #514A41;
+
+    display: flex;
+    flex-direction: column;              /* 🔥 IMPORTANT */
+    justify-content: space-between;      /* 🔥 pushes bottom down ai helped*/
+
+    padding: clamp(12px, 2vw, 32px);  /*better padding with wanting to make it responsive by chat gbt */
+
+    transition: all 0.4s ease;
+}
+
+
+/* Hover state text change*/
+.work1:hover,
+.work2:hover,
+.work3:hover,
+.work4:hover {
+    color: rgb(0, 200, 255); 
+}
+
+/* Background image (hidden by default) */
+.bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; 
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Fade image in on hover */
+.work1:hover .bg-img,
+.work2:hover .bg-img,
+.work3:hover .bg-img,
+.work4:hover .bg-img {
+    opacity: 1;
+}
+
+
+/* below helped by copilot to adjust and place image behind text matching with the bg-img class */
+.work1 .bg-img,
+.work2 .bg-img,
+.work3 .bg-img,
+.work4 .bg-img{
+    position: absolute;
+    inset: 0;                /* shorthand for top:0; left:0; right:0; bottom:0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;             
+    pointer-events: none;    /* prevents image from blocking hover/clicks */
+}
+
+
+
+
+
+.displaytextup2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6%;
+}
+
+
+.displaytextup2 .title,
+.displaytextup2 .number{
+    font-family: "Lexend", sans-serif;
+    font-size: clamp(16px, 3.5vw, 48px);
+    font-weight: 600;
+    z-index: 4; 
+}
+
+
+
+.bottom{
+    font-family: "Lexend", sans-serif;
+    font-size: clamp(14px, 2vw, 24px);
+    font-weight: 600;
+    z-index: 4;
+}
+
+
+
+
+
+/* .work1:, .work2, .work3, .work4 :before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+    transition: 0.4s;
+}
+
+
+.work.active{
+    flex: 2;
+    color: rgb(0, 255, 179);
+}
+
+.work.active::before{
+    opacity: 1;
+}
+
+
+.organize-work .work:not(.active){
+    flex: 0.8;
+}
+
+.work > *{
+    position: relative;
+    z-index: 2;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+/* .displaytextup2 .title, .number{
+    font-family: "Lexend", sans-serif;
+    font-size: var(--big-size);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6%;
+
+    transition: 0.3s ease-in-out;
+} */
+/* .bottom{
+    font-family: "Lexend", sans-serif;
+    font-size: var(--logo-size);
+    font-weight: 600;
+    display: flex;
+    align-items: flex-end;
+} */
+/* .work1{
+    width: 25%;
+    overflow: hidden;
+    font-family: "Lexend", sans-serif;
+    font-size: var(--big-size);
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6%;
+
+    transition: 0.3s ease-in-out;
+} */
+
+/* GENERAL STUFF */
+*{
+    scroll-behavior: smooth;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #EEEEEE;  
+}
