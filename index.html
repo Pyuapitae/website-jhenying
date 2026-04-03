@@ -10,20 +10,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JhenYing Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/lexend/v24/..." as="font" type="font/woff2" crossorigin>
 </head>
+
+
+<!-- <div id="loader">Loading...</div> -->
+
 
 <body>
 
     <header class="header">
         <a href="#home" class="logo"> JHENYING DESIGN</a> 
         <nav class="navbar">
-            <a href="#work">work</a>
-            <a href="#about">about</a>
-            <a href="#contact">contact</a>
+            <a href="#organize-work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
         </nav>
     </header>
 
-<section class="home">
+<section id="home" class="home">
     <div class="landing">
         <img src="landing.jpg" alt="landing  page fruit graphic design">
     </div>
@@ -103,7 +109,7 @@
 
 
 
-<section class="organize-work">
+<section id="organize-work" class="organize-work">
 
 <div class="work1">
     <img src="illustration-work-organize.jpg" class="bg-img"> 
@@ -116,7 +122,7 @@
 </div>
 
 
-<div class="work2">
+<div class="work2 active">
     <img src="packing-work-organize.jpg" class="bg-img"> 
 
         <div class="displaytextup2">
@@ -162,6 +168,50 @@
 </section>
 
 
+<div class="swiper gallerySwiper">
+
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+      <a href="https://www.shouyo.com.tw/blog/posts/iving-with-artisan-vol6">
+        <img class="slider-img" src="artisan-interview.jpeg">
+      </a>
+    </div>
+
+    <div class="swiper-slide">
+      <a href="https://transform.tw/news/designstar_%E6%96%BD%E7%9C%9F%E7%A9%8E">
+        <img class="slider-img2" src="transform-interview.jpg">
+      </a>
+    </div>
+
+    <div class="swiper-slide">
+      <a href="https://www.paper.com.tw/articles/53">
+        <img class="slider-img2" src="paper-interview.jpeg">
+      </a>
+    </div>
+
+    <div class="swiper-slide">
+      <a href="https://kagewang.com/13925563">
+        <img class="slider-img3" src="exhibition-jhenying.jpg">
+      </a>
+    </div>
+
+
+     <div class="swiper-slide">
+      <a href="https://www.sputniktw.com/pages/proposalofpets-ep2">
+        <img class="slider-img3" src="spuntnik.jpeg">
+      </a>
+    </div>
+
+
+  </div>
+
+  <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 <section>
     <div class="divider">
         <img class="divider-img" src="squrrle-cookie.png">
@@ -171,5 +221,74 @@
 </section>
 
 
+<section class="about">
+    <div class="about-content">
+        
+        <div class="displaytextup">
+            <img class="about-img" src="jhenying-about-me.jpeg">
+            <h1 class="title">Showcase</h1>
+            <h1 class="number">01</h1>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- <section class="footer">
+    <footer class="row1">
+        <div>
+            <a>
+                <h1>EMAIL</h1>
+            </a>
+        </div>
+        <div>
+            <a>
+                <h1>RESUME</h1>
+            </a>
+        </div>
+    </footer>
+
+    <footer class="row2">
+        <div>
+            <a>
+                <h1>@JHENYING DESIGN</h1>
+            </a>
+        </div>
+    </footer>
+
+    <footer class="row3">
+        <div>
+            <a>
+                <h1>INSTAGRAM</h1>
+            </a>
+        </div>
+        <div>
+            <a>
+                <h1>FACEBOOK</h1>
+            </a>
+        </div>
+    </footer>
+
+</section> 
+copilot help fix bc there can only be one footer in a code-->
+
+<footer id="contact" class="contact">
+    <div class="row1">
+        <div><a href="mailto:aliciachen3954ct@gmail.com">EMAIL</a></div>
+        <div><a>RESUME</a></div>
+    </div>
+
+    <div class="row2">
+        <div><a>@JHENYING DESIGN</a></div>
+    </div>
+
+    <div class="row3">
+        <div><a href="https://www.instagram.com/jhenying0920/">INSTAGRAM</a></div>
+        <div><a href="https://www.facebook.com/jhenying.shih/">FACEBOOK</a></div>
+    </div>
+</footer>
+
+
+
 </body>
-    <script src="main.js"></script>
+    <script src="main.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
