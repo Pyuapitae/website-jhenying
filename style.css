@@ -7,6 +7,17 @@
 }
 
 
+.doto-uniquifier {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 100,
+    "wght" 400;
+}
+
+
 .header {
     position: fixed;
     width: 100%;
@@ -18,7 +29,7 @@
     align-items: center;
     box-sizing: border-box;
     background-color: #EEEEEE;
-    color:#514A41;
+    color:#3F78AE;
     z-index: 100;
     font-family: "Lexend", sans-serif;
 }
@@ -47,7 +58,7 @@
 }
 
 .navbar a:hover{
-    border-bottom: 3px solid #514A41;
+    border-bottom: 3px solid #3F78AE;
     font-weight: 700;
 }
 /* to get rid of all anchor since it's not working if in og not in anchor*/
@@ -74,7 +85,34 @@
     min-height: 500px;           /* prevents tiny screens from collapsing */
     position: relative;
     overflow: hidden;
+    cursor: none;
 }
+
+/* ai helped custom cursor */
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #3F78AE;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 800;
+    font-size: 22px;
+
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+    z-index: 9999;
+
+    opacity: 0; /* start hidden */
+}
+
 
 /* smooth fade + slight zoom */
 .landing img {
@@ -116,7 +154,7 @@ body {
 
 .showcase{
     display:flex;
-    height: 100dvh;
+    height: 65dvh;
 }
 
 .display{
@@ -126,13 +164,14 @@ body {
     fixed by ai chat gbt
     */
     overflow: hidden;
-    background-color: #514A41;
+    background-color: #3F78AE;
     padding: 3% 5% 5% 5%;
     display: grid;
+    align-content: centercenter;
     grid-template-rows: auto auto; /* Defines two rows google auto ai helped*/
     gap: 10%;  /*set gap of the bottom two div */
 }
-
+/* 
 .displaytextup .title{
     font-family: "Lexend", sans-serif;
     font-size: var(--big-size);
@@ -156,7 +195,7 @@ body {
     gap: 6%;
 
     transition: 0.3s ease-in-out;
-}
+} */
 
 
 .displaytext{
@@ -168,6 +207,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 6%;
+    padding-top: 5dvh;
     transition: 0.3s ease-in-out;
     transform: translateX(0); 
 }
@@ -221,6 +261,7 @@ ai was able to help below for all the display
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 #preview-img {
@@ -342,7 +383,7 @@ then i build off and edit to make it work*/
     overflow: hidden;
 
     background: white;
-    color: #514A41;
+    color: #3F78AE;
 
     display: flex;
     padding: 2%;
@@ -365,7 +406,7 @@ then i build off and edit to make it work*/
     overflow: hidden;
 
     background: white;
-    color: #514A41;
+    color: #3F78AE;
 
     display: flex;
     flex-direction: column;              /* 🔥 IMPORTANT */
@@ -411,7 +452,7 @@ then i build off and edit to make it work*/
 .work2.active::before,
 .work3.active::before,
 .work4.active::before {
-    background: #564b3c7a;
+    background: #4855697a;
 }
 
 .work2.active .bg-img { opacity: 1; }
@@ -456,7 +497,7 @@ then i build off and edit to make it work*/
 .work2:hover::before,
 .work3:hover::before,
 .work4:hover::before {
-    background:#564b3c7a;
+    background:#4855697a;
 }
 
 /* this shows img */
@@ -478,10 +519,19 @@ then i build off and edit to make it work*/
 .displaytextup2 .title,
 .displaytextup2 .number{
     font-family: "Lexend", sans-serif;
-    font-size: clamp(16px, 3.5vw, 48px);
+    font-size: clamp(16px, 3.5vw, 40px);
     font-weight: 600;
     z-index: 4; 
 }
+
+
+
+/* changes font when hover on the 4 catergory to indicate click? */
+.displaytextup2 .title:hover{
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 800;
+}
+
 /* title of work bottom */
 .bottom{
     font-family: "Lexend", sans-serif;
@@ -531,6 +581,30 @@ then i build off and edit to make it work*/
 
 
 
+
+
+
+.about {
+    display: flex;
+    width: 100%;
+    /* the min height here messed with my werid gap between about and down slider */
+    padding-bottom: 10vh; 
+    /* padding-top: 5vh; */
+}
+
+.about-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3vh;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 
 
@@ -603,16 +677,25 @@ then i build off and edit to make it work*/
 } */
 
 /* Container */
-.gallerySwiper {
+/* .gallerySwiper {
   margin: 0 auto;
-  padding: 80px;
+  padding: 0px;
   position: relative;
+  height: auto !important;
 
+} */
+
+@media (max-width: 600px) {
+  .gallerySwiper {
+    margin-top: -40px; /* adjust to taste */
+  }
 }
+
 
 /* Wrapper */
 .gallerySwiper .swiper-wrapper {
   display: flex;
+  height: auto !important;
 }
 
 /* Slides (your original style, no radius) */
@@ -629,11 +712,15 @@ then i build off and edit to make it work*/
     overflow: hidden;
     flex-shrink: 0;
     border-radius: 0;
+    
+    transform-origin: center center; /* prevents vertical expansion ai helped*/
 
     /* default small */
     transform: scale(0.7);
     transition: transform 0.4s ease;
 }
+
+
 
 /* Center slide BIG */
 .gallerySwiper .swiper-slide-active {
@@ -715,34 +802,48 @@ then i build off and edit to make it work*/
 
 
 
-.about {
+.invite {
     display: flex;
-    width: 100%;
-    min-height: 60vh;
-    /* padding: 5vh 5%; */
+    justify-content: flex-end;
+    padding: 10dvh 5dvh 5dvh 5dvh;
 }
 
-.about-content {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 3vh;
+.bottchat {
+    color: #3F78AE;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    font-size: clamp(24px, 3vw, 96px);
+
+    text-decoration: none;
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out;
 }
 
-.about-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.bottchat:hover {
+    transform: translateX(-5%);
 }
 
 
-/* footer below */
+/* .displaytext .item {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    transform: translateX(0);
+    transition: 0.3s ease;
+}
+
+.displaytext .item.active {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    transform: translateX(5%);
+} */
+
+/* footer below*/
+
 .contact {
     display: flex;
     width: 100%;
-    padding: 20dvh 5% 5dvh 5%;
-    background-color: rgba(0, 255, 255, 0);
+    padding: 5dvh 5% 5dvh 5%;
+    background-color: #3F78AE;
     justify-content: space-between;
     /* align-items: center; */
     align-items: flex-end;   /* ⬅️ THIS aligns all rows at the bottom ai help so jhenying isnt floating*/
@@ -754,10 +855,11 @@ then i build off and edit to make it work*/
 .contact .row2 a,
 .contact .row3 a {
     text-decoration: none;
-    color: #514A41;
+    color: #EEEEEE;
     font-family: "Lexend", sans-serif;
     font-weight: 500;
     font-size: var(--nav-size);
+    flex-direction: row;
 }
 
 
@@ -779,8 +881,6 @@ then i build off and edit to make it work*/
     gap: clamp(12px, 2vw, 12px);
     text-align: right;
 }
-
-
 
 
 
