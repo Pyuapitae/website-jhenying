@@ -63,6 +63,23 @@ works.forEach(work => {
         activeWork = work; // update the last active
     });
 });
+const landing = document.querySelector(".landing");
+const cursor = document.querySelector(".cursor");
+
+landing.addEventListener("mousemove", (e) => {
+  cursor.style.opacity = 1;
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+landing.addEventListener("mouseleave", () => {
+  cursor.style.opacity = 0; // hide when leaving landing page
+});
+
+
+landing.querySelectorAll("a").forEach(link => {
+  link.addEventListener("mouseenter", () => cursor.classList.add("grow"));
+  link.addEventListener("mouseleave", () => cursor.classList.remove("grow"));
+});
 
 
 });

@@ -805,7 +805,7 @@ then i build off and edit to make it work*/
 .invite {
     display: flex;
     justify-content: flex-end;
-    padding: 10dvh 5dvh 5dvh 5dvh;
+    padding: 15dvh 5dvh 5dvh 5dvh;
 }
 
 .bottchat {
