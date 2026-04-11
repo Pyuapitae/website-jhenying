@@ -82,6 +82,27 @@ landing.querySelectorAll("a").forEach(link => {
 });
 
 
+
+
+const about = document.querySelector(".about");
+const cursor2 = document.querySelector(".cursor2");
+
+about.addEventListener("mousemove", (e) => {
+  cursor2.style.opacity = 1;
+  cursor2.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+});
+
+about.addEventListener("mouseleave", () => {
+  cursor2.style.opacity = 0; // hide when leaving landing page
+});
+
+
+about.querySelectorAll("a").forEach(link => {
+  link.addEventListener("mouseenter", () => cursor2.classList.add("grow"));
+  link.addEventListener("mouseleave", () => cursor2.classList.remove("grow"));
+});
+
+
 });
 
 

@@ -86,6 +86,7 @@
     min-height: 500px;
     position: relative;
     overflow: hidden;
+    cursor: none;
 }
 
 /* Background images */
@@ -680,7 +681,7 @@ then i build off and edit to make it work*/
 /* RIGHT SIDE — SOLID BLOCK */
 .about-text {
     flex: 1;
-    background-color: #3F78AE;
+    color: #3F78AE;
     padding: 4dvh 5%;
     display: flex;
     flex-direction: column;
@@ -884,27 +885,187 @@ then i build off and edit to make it work*/
 }
 
 
-
+/* 
 .invite {
     display: flex;
     justify-content: flex-end;
     padding: 15dvh 5dvh 5dvh 5dvh;
+} */
+
+.cursor2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #3F78AE;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 800;
+    font-size: 22px;
+
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+    z-index: 9999;
+
+    opacity: 0; /* start hidden */
 }
+
+/* ai helped modify layout  */
+.about {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    cursor: none;
+}
+
+
+.about-text {
+    width: 50%;
+    background-color: #ffffff;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+.about-content {
+    width: 50%;
+    position: relative;
+}
+
+.displaytextup {
+    position: relative;
+    height: 100%;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .bottchat {
     color: #3F78AE;
-    font-family: "Doto", sans-serif;
-    font-variation-settings: "ROND" 100, "wght" 600;
-    font-size: clamp(24px, 3vw, 96px);
-
-    text-decoration: none;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    font-size: clamp(18px, 2.5vw, 60px);
     transform: translateX(0);
     transition: transform 0.2s ease-in-out;
+    padding-top: 15%;
 }
 
 .bottchat:hover {
-    transform: translateX(-5%);
+    transform: translateX(3%);
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
 }
+
+.abt-desc {
+    color: #3F78AE;
+    font-size: clamp(12px, 1.6vw, 20px);
+    line-height: 1.6;
+}
+
+/* ai helped */
+
+
+
+.displaytextup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Shared text styling ai help*/
+.displaytextup div {
+    position: absolute;
+    color: white;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+}
+
+/* TOP LEFT — SIDO STUDIO ai help*/
+.studio-name {
+    top: 4%;
+    right: 4%;
+    font-size: clamp(10px, 1.1vw, 18px);
+    opacity: 0.85;
+}
+
+/* CENTER LEFT — Jhen Ying ai help*/
+.abt-name {
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    font-size: clamp(24px, 4vw, 72px);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.35em;
+}
+
+.abt-name::after {
+    content: "★";
+    font-size: 0.55em;
+    opacity: 0.9;
+}
+
+/* BOTTOM LEFT — GRAPHIC DESIGNER ai help*/
+.occupation {
+    bottom: 6%;
+    left: 4%;
+    font-size: clamp(12px, 1.5vw, 22px);
+    opacity: 0.85;
+}
+
+/* cute sticker layout helped by ai */
+.deco-plate, .deco-plate2 {
+    width: clamp(75px, 15vw, 180px); /* responsive sticker size */
+    height: auto;
+    object-fit: contain;
+    /* filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.15)); */
+    transform: rotate(-3deg);
+    transition: transform 0.2s ease;
+}
+
+
+.deco-plate {
+    position: absolute;
+    right: 5%;          /* small breathing room ai help*/
+    top: 7%;
+    width: clamp(90px, 14vw, 180px);
+    height: auto;
+    object-fit: contain;
+    transform: rotate(-3deg);
+    transition: transform 0.2s ease;
+    /* display: flex; 
+    justify-content: flex-end; */
+}
+
+
+/* .deco-plate:hover, .deco-plate2:hover{
+    transform: rotate(0deg) scale(1.05);
+} */
+
+
+
+/* -------------------------------------- */
+/* RESPONSIVE TUNING FOR SMALL
+
+
+
 
 
 /* .displaytext .item {
@@ -925,7 +1086,8 @@ then i build off and edit to make it work*/
 .contact {
     display: flex;
     width: 100%;
-    padding: 5dvh 5% 5dvh 5%;
+    margin-top: 10dvh;
+    padding: 5dvh 5% 3dvh 5%;
     background-color: #3F78AE;
     justify-content: space-between;
     /* align-items: center; */
@@ -936,11 +1098,24 @@ then i build off and edit to make it work*/
 
 .contact .row1 a,
 .contact .row2 a,
-.contact .row3 a {
+.contact .row3 a, .row2 {
     text-decoration: none;
     color: #EEEEEE;
     font-family: "Lexend", sans-serif;
     font-weight: 500;
+    font-size: var(--nav-size);
+    flex-direction: row;
+}
+
+
+.contact .row1 a:hover,
+.contact .row2 a:hover,
+.contact .row3 a:hover {
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
     font-size: var(--nav-size);
     flex-direction: row;
 }
