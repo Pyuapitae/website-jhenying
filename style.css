@@ -445,6 +445,22 @@ then i build off and edit to make it work*/
 } */
 
 
+/* ai help  linking work */
+.full-link {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: auto; /* always clickable */
+}
+
+/* text should NOT block hover */
+/* .displaytextup2,
+.displaytextup2 * ,
+.bottom {
+    pointer-events: none;
+} */
+
+
 .organize-work{
     display:flex;
     min-height: 90dvh;
