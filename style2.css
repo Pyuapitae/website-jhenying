@@ -1,0 +1,131 @@
+/* PAGE LAYOUT */
+.work2-layout {
+    display: flex;
+    width: 100%;
+    padding-top: 10dvh; /* space under header */
+}
+
+/* a lot of my stuff here is first ideation me-> ai formatting -> personal tweaking */
+
+/* .sticky-sidebar {
+    width: 22%;
+    height: 100dvh;
+    background: #3F78AE;
+    padding: 4dvh 2dvh;
+    display: sticky;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: sticky;
+    top: 12dvh;
+    height: fit-content;
+} */
+
+.sticky-sidebar {
+    position: fixed;          /* stays in place ALWAYS */
+    top: 10dvh;               /* sits under your header */
+    left: 0;
+    width: 22%;
+    height: calc(100dvh - 12dvh); /* fills entire page below header */
+    background: #3F78AE;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3rem;                /* more spacing between items */
+    padding: 4dvh 2dvh;
+
+    overflow: hidden;         /* no scroll inside */
+}
+
+
+
+.sidebar-item {
+    font-family: "Lexend", sans-serif;
+    font-size: clamp(12px, 1.2vw, 18px);
+    font-weight: 600;
+    color: white;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.sidebar-item:hover {
+    opacity: 1;
+    transform: translateX(4%);
+}
+
+/* RIGHT CONTENT */
+.work2-content {
+    width: 78%;
+    height: 90dvh;
+    padding: 0 4%;
+    color: #3F78AE;
+    background-color: rgba(0, 0, 255, 0);
+    font-family: "Lexend", sans-serif;
+    margin-left: 22%;
+
+}
+
+.work2-images {
+    display: flex;
+    gap: 2%;
+    margin: 4dvh 0;
+}
+
+.work2-images img {
+    width: 32%;
+    height: auto;
+    object-fit: cover;
+}
+
+.work2-description {
+    font-size: clamp(14px, 1.4vw, 20px);
+    line-height: 1.6;
+    margin-top: 2dvh;
+}
+
+.work2-year {
+    margin-top: 4dvh;
+    font-size: clamp(12px, 1.2vw, 16px);
+    opacity: 0.7;
+}
+
+
+
+/* Footer on pages with sidebar */
+.contact {
+    margin-left: 22%;   /* same width as sidebar */
+    margin-top: 10%;
+    width: 78%;         /* remaining space */
+    margin-bottom: 0%;
+}
+
+
+
+/* MOBILE LAYOUT FIX */
+@media (max-width: 900px) {
+
+    /* Sidebar becomes full width at top */
+    .sticky-sidebar {
+    visibility: hidden;
+    }
+
+    /* Layout becomes vertical */
+    .work2-layout {
+        flex-direction: column;
+        padding-top: 12dvh; /* keep header spacing */
+    }
+
+    /* Content takes full width */
+    .work2-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 6%;
+    }
+
+    /* Footer aligns full width */
+    .contact {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 12dvh;
+    }
+}
