@@ -1,10 +1,3 @@
-/* PAGE LAYOUT */
-.work2-layout {
-    display: flex;
-    width: 100%;
-    padding-top: 10dvh; /* space under header */
-}
-
 /* a lot of my stuff here is first ideation me-> ai formatting -> personal tweaking */
 
 /* .sticky-sidebar {
@@ -20,6 +13,13 @@
     height: fit-content;
 } */
 
+
+/* PAGE LAYOUT */
+.work2-layout {
+    display: flex;
+    width: 100%;
+    padding-top: 10dvh; /* space under header */
+}
 .sticky-sidebar {
     position: fixed;          /* stays in place ALWAYS */
     top: 10dvh;               /* sits under your header */
@@ -31,8 +31,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 3rem;                /* more spacing between items */
-    padding: 4dvh 2dvh;
+    gap: 2rem;                /* more spacing between items */
+    padding: 8dvh 2dvh 5dvh 2dvh; 
 
     overflow: hidden;         /* no scroll inside */
 }
@@ -40,18 +40,23 @@
 
 
 .sidebar-item {
+    display: block;
+    text-decoration: none;
     font-family: "Lexend", sans-serif;
-    font-size: clamp(12px, 1.2vw, 18px);
+    font-size: clamp(14px, 1.6vw, 22px);
     font-weight: 600;
     color: white;
-    opacity: 0.85;
+    opacity: 0.5;
     transition: 0.2s ease;
+    padding: 0.5rem 0;
 }
 
 .sidebar-item:hover {
     opacity: 1;
-    transform: translateX(4%);
+    transform: translateX(6%);
 }
+
+
 
 /* RIGHT CONTENT */
 .work2-content {
@@ -59,23 +64,40 @@
     height: 90dvh;
     padding: 0 4%;
     color: #3F78AE;
-    background-color: rgba(0, 0, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
     font-family: "Lexend", sans-serif;
     margin-left: 22%;
 
 }
-
-.work2-images {
+/* 
+.work2-p1-images {
     display: flex;
     gap: 2%;
     margin: 4dvh 0;
 }
 
-.work2-images img {
+.work2-p1-images img {
     width: 32%;
     height: auto;
     object-fit: cover;
+} */
+/* ai edit from above */
+.work2-p1-images {
+    display: flex;
+    gap: 2%;
+    margin: 4dvh 0;
 }
+
+.work2-p1-images img {
+    width: 32%;
+    height: 50dvh;        /* ⭐ makes them tall */
+    object-fit: cover;    /* ⭐ crops nicely */
+    border-radius: 4px;   /* optional, looks clean */
+}
+
+
+
+/* class="wp1-img1" */
 
 .work2-description {
     font-size: clamp(14px, 1.4vw, 20px);
