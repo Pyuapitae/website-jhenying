@@ -1054,6 +1054,15 @@ then i build off and edit to make it work*/
     justify-content: flex-end; */
 }
 
+@media (max-width: 600px) {
+    .deco-plate {
+        width: clamp(45px, 18vw, 80px); /* MUCH smaller on mobile */
+        right: 2%;
+        top: 4%;
+        transform: rotate(-1deg);
+    }
+}
+
 
 /* .deco-plate:hover, .deco-plate2:hover{
     transform: rotate(0deg) scale(1.05);
