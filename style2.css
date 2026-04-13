@@ -20,6 +20,13 @@
     padding-top: 10dvh;
     box-sizing: border-box;
 } */
+
+
+
+
+/* disclaimer-> this work page and linking of things are mainly designed 
+but then running through with ai to fix structure and make everythign work ⭐⭐⭐*/
+
 .work2-layout {
     display: flex;
     width: 100%;
@@ -188,11 +195,6 @@
         padding: 4%;
     }
 
-    .project-stickers {
-        margin-left: 18%;
-        width: calc(100% - 18%);
-    }
-
 }
 
 
@@ -228,18 +230,11 @@
         margin-bottom: 1dvh;
     }
 
-        .project-stickers {
-        margin-left: 0;
-        width: 100%;
-    }
 
 }
-
-
-
 .project-stickers {
-    margin-left: 22%;   /* ⭐ match project content offset */
-    width: calc(100% - 22%);  /* ⭐ keeps them centered inside content column */
+    margin-left: 22%;   /* desktop offset (matches content) */
+    width: calc(100% - 22%);
     display: flex;
     justify-content: center;
     gap: 4rem;
@@ -248,20 +243,38 @@
     padding: 1rem 0;
 }
 
-
 .project-stickers img {
     width: clamp(28px, 4vw, 55px);
     height: auto;
     object-fit: contain;
-    /* filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.15)); */
     transform: rotate(0deg);
     transition: transform 0.25s ease;
 }
 
-/* .project-stickers img:hover {
-    transform: rotate(20deg) scale(1.1);
-} */
 
+/* ✅ MOBILE FIX — FULL RESET  chat gbt help fix*/
+@media (max-width: 900px) {
+    .project-stickers {
+        margin-left: 0 !important;
+        width: 100% !important;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 2rem;
+        padding: 0 1.5rem;   /* EVEN padding both sides */
+        box-sizing: border-box;
+    }
+}
+
+/* ✅ SMALL MOBILE — KEEP CENTERED (NO WEIRD LEFT PUSH) */
+@media (max-width: 500px) {
+    .project-stickers {
+        padding: 0 1rem;   /* symmetric padding */
+        gap: 2rem;
+    }
+}
 
 
 
