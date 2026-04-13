@@ -1170,13 +1170,11 @@ then i build off and edit to make it work*/
 
 
 /* GENERAL STUFF */
-*{
-    scroll-behavior: smooth;
-}
 
 html{
     overflow-x: hidden;
     scroll-padding-top: 100px; /* adjust to match your header height ai tip*/
+    scroll-behavior: smooth;
 }
 
 body{
