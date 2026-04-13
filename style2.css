@@ -243,6 +243,7 @@ but then running through with ai to fix structure and make everythign work ⭐�
     padding: 1rem 0;
 }
 
+
 .project-stickers img {
     width: clamp(28px, 4vw, 55px);
     height: auto;
@@ -252,7 +253,7 @@ but then running through with ai to fix structure and make everythign work ⭐�
 }
 
 
-/* ✅ MOBILE FIX — FULL RESET  chat gbt help fix*/
+/* ✅ MOBILE FIX — FULL RESET  chat gbt help fix */
 @media (max-width: 900px) {
     .project-stickers {
         margin-left: 0 !important;
@@ -263,7 +264,7 @@ but then running through with ai to fix structure and make everythign work ⭐�
         align-items: center;
 
         gap: 2rem;
-        padding: 0 1.5rem;   /* EVEN padding both sides */
+        padding: 0 1.5rem;   
         box-sizing: border-box;
     }
 }
@@ -305,6 +306,12 @@ but then running through with ai to fix structure and make everythign work ⭐�
 
 }
 
+/* make sure cursor dont run on mobile devices */
+@media (hover: none) and (pointer: coarse) {
+    .cursor3 {
+        display: none !important;
+    }
+}
 
 
 /* *{
