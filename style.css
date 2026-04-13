@@ -912,8 +912,8 @@ then i build off and edit to make it work*/
     position: fixed;
     top: 0;
     left: 0;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background: #3F78AE;
     color: white;
@@ -922,7 +922,7 @@ then i build off and edit to make it work*/
     justify-content: center;
     font-family: "Doto", sans-serif;
     font-variation-settings: "ROND" 100, "wght" 800;
-    font-size: 22px;
+    font-size: 18px;
 
     pointer-events: none;
     transform: translate(-50%, -50%);
