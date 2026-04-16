@@ -210,15 +210,41 @@
         </div>
     </div>
 
-    <div class="about-text">
+    <!-- <div class="about-text" class="hover-swap">
         <img class="deco-plate" src="public/homepage-images/16.png">
-        <div class="bottchat">Let's connect <br>& chat more!</div>
+        <div class="bottchat" class="og-text">Let's connect <br>& chat more!</div>
+        <div class="bottchat" class="sec-text">Let's connect <br>& chat more!</div>
         <div class="abt-desc">
             I am a multidisciplinary artist and designer that worked closely with bring joy into everyday object with design. <br><br>
             After graduating from Taiwan University, she started working under local studio before creating her own team under Jhen Ying Design.
         </div>
-        <!-- <img class="deco-plate2" src="public/homepage-images/17.png"> -->
+    </div> -->
+
+    <div class="about-text">
+    <img class="deco-plate" src="public/homepage-images/16.png">
+
+    <!-- <div class="hover-swap bottchat">
+        <span class="og-text">Let's connect <br>& chat more!</span>
+        <span class="sec-text">Let's connect <br>& chat more!</span>
+    </div> -->
+
+
+    <div class="hover-swap bottchat">
+        <span class="og-text">
+            Let's connect <br>& chat more!
+        </span>
+        <span class="sec-text">
+            Let's connect <br>& chat more!
+        </span>
     </div>
+
+
+    <div class="abt-desc">
+        I am a multidisciplinary artist and designer that worked closely with bring joy into everyday object with design. <br><br>
+        After graduating from Taiwan University, she started working under local studio before creating her own team under Jhen Ying Design.
+    </div>
+</div>
+
 </section>
 
 <!--
@@ -334,10 +360,11 @@ copilot help fix bc there can only be one footer in a code-->
     <a href="https://www.instagram.com/jhenying0920/" class="bottchat">Let's connect and chat more!</a>
 </section> -->
 
-<footer id="contact" class="contact">
+<!-- <footer id="contact" class="contact">
     <div class="row1">
         <div><a href="mailto:aliciachen3954ct@gmail.com">EMAIL</a></div>
-        <div><a>RESUME</a></div>
+        <div class="og-text"><a>RESUME</a></div>
+        <div class="sec-text"><a>RESUME</a></div>
     </div>
 
     <div><a href="#home" class="row2">JHENYING DESIGN</a></div>
@@ -346,9 +373,107 @@ copilot help fix bc there can only be one footer in a code-->
         <div><a href="https://www.instagram.com/jhenying0920/">INSTAGRAM</a></div>
         <div><a href="https://www.facebook.com/jhenying.shih/">FACEBOOK</a></div>
     </div>
-</footer>
+</footer> was stuck so ask chatgbt below-->
 
+
+<footer id="contact" class="contact">
+
+    <div class="row1">
+        <a href="mailto:aliciachen3954ct@gmail.com" class="hover-swap">
+            <span class="og-text">EMAIL</span>
+            <span class="sec-text">EMAIL</span>
+        </a>
+
+        <a href="#" class="hover-swap">
+            <span class="og-text">RESUME</span>
+            <span class="sec-text">RESUME</span>
+        </a>
+    </div>
+
+    <div class="row2">
+        <a href="#home">
+            <span class="og-text">JHENYING DESIGN</span>
+        </a>
+    </div>
+
+    <div class="row3">
+        <a href="https://www.instagram.com/jhenying0920/" class="hover-swap">
+            <span class="og-text">INSTAGRAM</span>
+            <span class="sec-text">INSTAGRAM</span>
+        </a>
+
+        <a href="https://www.facebook.com/jhenying.shih/" class="hover-swap">
+            <span class="og-text">FACEBOOK</span>
+            <span class="sec-text">FACEBOOK</span>
+        </a>
+    </div>
+
+</footer>
 
 
 </body>
     <script src="main.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+
+
+    <!-- 
+<section>
+    <div class="work-nav">
+        <div class="project-list"></div>
+    </div>
+</section> -->
+
+
+
+
+
+<!-- <div class="work2-layout">
+    <div class="sidebar-space"></div>
+
+    <aside class="sticky-sidebar">
+        <a href="#project1" class="sidebar-item">KAJITSU COOKIE</a>
+        <a href="#project2" class="sidebar-item">KAKUKA HANDMAKE</a>
+        <a href="#project3" class="sidebar-item">EAT BREAD</a>
+        <a href="#project4" class="sidebar-item">LOTO BANANA BREAD</a>
+        <a href="#project5" class="sidebar-item">OATGOOD</a>
+        <a href="#project6" class="sidebar-item">YANGMEI</a>
+        <a href="#project7" class="sidebar-item">ZIJI TANG TEA</a>
+    </aside>
+
+
+    <main id="project1" class="work2-content">
+        <h1 class="work2-p1-name">KAJITSU COOKIE</h1>
+
+        <div class="work2-p1-images">
+            <div class="img-wrap"><img src="public/work-2/forest-animal-sweet2.jpg"></div>
+            <div class="img-wrap"><img src="public/work-2/forest-animal-sweet1.jpeg"></div>
+            <div class="img-wrap"><img src="public/work-2/forest-animal-sweet3.jpg"></div>
+        </div>
+
+        <p class="work2-description">
+            KAJITSU COOKIE - into the forest is designed to explore the value and memories of the Taiwanese land...
+        </p>
+
+        <p class="work2-year">Designed 2023</p>
+    </main>
+
+    <main id="project2" class="work2-content">
+        <h1 class="work2-p1-name">KAKUKA HANDMAKE</h1>
+
+        <div class="work2-p1-images">
+            <div class="img-wrap"><img src="public/work-2/kakuka1.jpg"></div>
+            <div class="img-wrap"><img src="public/work-2/kakuka2.jpg"></div>
+            <div class="img-wrap"><img src="public/work-2/kakuka3.jpg"></div>
+        </div>
+
+        <p class="work2-description">
+            Description for Kakuka Handmake goes here. You can write anything you want about the project.
+        </p>
+
+        <p class="work-year">Designed 2024</p>
+    </main>
+
+</div> -->
+
+<!-- FLEX ROW: sidebar + ghost space ONLY -->

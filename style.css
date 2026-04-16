@@ -104,7 +104,7 @@
    ONE UNIFIED LOOP (3.264s)
    ================================ */
 
-/* BG1: fast section */
+/* BG1: fast section ai*/
 .bg-1 {
     animation: bg1 3.264s linear infinite;
 }
@@ -168,7 +168,7 @@
 
 
 
-/* ai helped custom cursor */
+/* ai helped boiler for cursor */
 .cursor {
     position: fixed;
     top: 0;
@@ -212,10 +212,6 @@ body {
 
 .display{
     width: 40%;
-       /* here conflicted how to do mobile bc everything 
-    set to vh and phone are horizontal; mby in java add max vh??
-    fixed by ai chat gbt
-    */
     overflow: hidden;
     background-color: #3F78AE;
     padding: 3% 5% 5% 5%;
@@ -376,12 +372,9 @@ ai was able to help below for all the display
     align-items: center;
     flex-direction: row;
 
+        /* ai helped clamp size */
     gap: clamp(20px, 5vw, 80px);
-
-    /* ⭐ predictable height */
     min-height: clamp(12vh, 18vh, 24vh);
-
-    /* ⭐ padding no longer blows up the height */
     padding: clamp(2.5vh, 8vh, 12vh) 0;
 }
 
@@ -395,7 +388,7 @@ ai was able to help below for all the display
 }
 
 
-/* desktop/tablet — 10% smaller */
+/* desktop/tablet — 10% smaller ai helped*/
 .divider-img,
 .divider-img2 {
     width: clamp(60px, 11vw, 120px);
@@ -410,7 +403,7 @@ ai was able to help below for all the display
     transform: rotateZ(-20deg);
 }
 
-/* mobile — 20% smaller than that */
+/* mobile — 20% smaller than that ai helped*/
 @media (max-width: 600px) {
     .divider {
         gap: clamp(12px, 4vw, 24px);
@@ -453,14 +446,6 @@ then i build off and edit to make it work*/
     pointer-events: auto; /* always clickable */
 }
 
-/* text should NOT block hover */
-/* .displaytextup2,
-.displaytextup2 * ,
-.bottom {
-    pointer-events: none;
-} */
-
-
 .organize-work{
     display:flex;
     min-height: 90dvh;
@@ -478,8 +463,8 @@ then i build off and edit to make it work*/
     color: #3F78AE;
 
     display: flex;
-    flex-direction: column;              /* 🔥 IMPORTANT */
-    justify-content: space-between;      /* 🔥 pushes bottom down ai helped*/
+    flex-direction: column;            
+    justify-content: space-between;      /* pushes bottom down ai helped*/
 
     padding: clamp(12px, 2vw, 32px);  /*better padding with wanting to make it responsive by chat gbt */
 
@@ -596,10 +581,10 @@ then i build off and edit to make it work*/
 
 
 /* changes font when hover on the 4 catergory to indicate click? */
-.displaytextup2 .title:hover{
+/* .displaytextup2 .title:hover{
     font-family: "Doto", sans-serif;
     font-variation-settings: "ROND" 100, "wght" 800;
-}
+} */
 
 /* title of work bottom */
 .bottom{
@@ -969,7 +954,7 @@ then i build off and edit to make it work*/
     object-fit: cover;
 }
 
-
+/* 
 .bottchat {
     color: #3F78AE;
     font-family: "Lexend", sans-serif;
@@ -978,12 +963,30 @@ then i build off and edit to make it work*/
     transform: translateX(0);
     transition: transform 0.2s ease-in-out;
     padding-top: 15%;
+} */
+
+/* .bottchat:hover {
+    transform: translateX(3%);
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+} ai say use below */
+
+.bottchat {
+    color: #3F78AE;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    font-size: clamp(18px, 2.5vw, 60px);
+    line-height: 1.2;
+
+    display: inline-block; /* 🔥 important */
+    position: relative;
+
+    transform: translateX(0);
+    transition: transform 0.2s ease-in-out;
 }
 
 .bottchat:hover {
     transform: translateX(3%);
-    font-family: "Doto", sans-serif;
-    font-variation-settings: "ROND" 100, "wght" 600;
 }
 
 .abt-desc {
@@ -1108,15 +1111,30 @@ then i build off and edit to make it work*/
 
 /* footer below*/
 
-.contact {
+
+
+/* .contact .row1 a:hover,
+.contact .row2 a:hover,
+.contact .row3 a:hover {
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+    font-size: var(--nav-size);
+    flex-direction: row;
+} */
+
+
+/* .contact {
     display: flex;
     width: 100%;
     margin-top: 10dvh;
     padding: 5dvh 5% 3dvh 5%;
     background-color: #3F78AE;
     justify-content: space-between;
-    /* align-items: center; */
-    align-items: flex-end;   /* ⬅️ THIS aligns all rows at the bottom ai help so jhenying isnt floating*/
+
+    align-items: flex-end;  
     box-sizing: border-box;
 }
 
@@ -1130,20 +1148,11 @@ then i build off and edit to make it work*/
     font-weight: 500;
     font-size: var(--nav-size);
     flex-direction: row;
+    display:inline-block;
+    position: relative;
 }
 
 
-.contact .row1 a:hover,
-.contact .row2 a:hover,
-.contact .row3 a:hover {
-    text-decoration: none;
-    color: #EEEEEE;
-    font-family: "Doto", sans-serif;
-    font-variation-settings: "ROND" 100, "wght" 600;
-    letter-spacing: 0.5px;
-    font-size: var(--nav-size);
-    flex-direction: row;
-}
 
 
 .contact .row1 {
@@ -1166,8 +1175,157 @@ then i build off and edit to make it work*/
 }
 
 
+.sec-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+.og-text{
+  transition: opacity 0.3s ease;
+}
 
 
+.hover-swap:hover .original {
+  opacity: 0;
+}
+
+.hover-swap:hover .new-font {
+  opacity: 1;
+} my try didnt work below ai helped*/
+
+.contact {
+    display: flex;
+    width: 100%;
+    margin-top: 10dvh;
+    padding: 5dvh 5% 3dvh 5%;
+    background-color: #3F78AE;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-sizing: border-box;
+}
+
+/* ROW LAYOUT */
+.contact .row1,
+.contact .row2,
+.contact .row3 {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2vw, 12px);
+}
+
+
+/* HERE IS AI HELP MAKE MY IG AND FB ALIGN RIGHT */
+.row3 a {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+/* .hover-swap-right .sec-text {
+    right: 0;
+    left: auto;
+    text-align: right;
+} */
+
+
+/* LINK BASE STYLE */
+.contact a {
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: "Lexend", sans-serif;
+    font-weight: 500;
+    font-size: var(--nav-size);
+    position: relative;
+    display: inline-block;
+}
+
+/* HOVER SWAP CONTAINER */
+.hover-swap {
+    position: relative;
+    display: inline-block;
+}
+
+/* ORIGINAL TEXT */
+.og-text {
+    transition: opacity 0.2s ease;
+}
+
+/* HOVER TEXT */
+.sec-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    font-size: inherit;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+/* =========================
+   GLOBAL FONT SWAP SYSTEM
+   ========================= */
+
+.hover-swap {
+    position: relative;
+    display: inline-block;
+}
+
+/* both layers share SAME layout */
+.hover-swap .og-text,
+.hover-swap .sec-text {
+    display: block;
+    line-height: inherit;
+}
+
+/* original */
+.og-text {
+    transition: opacity 0.05s ease;
+}
+
+/* hover version */
+.sec-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+
+    /* 🔥 THIS keeps EVERYTHING identical */
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+
+    /* only change font */
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+    transition: opacity 0.05s ease;
+}
+
+/* hover trigger */
+.hover-swap:hover .og-text {
+    opacity: 0;
+}
+
+.hover-swap:hover .sec-text {
+    opacity: 1;
+}
 
 /* GENERAL STUFF */
 
@@ -1191,3 +1349,4 @@ body{
   justify-content: center;
   z-index: 9999;
 } */
+
