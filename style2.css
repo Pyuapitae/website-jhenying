@@ -373,3 +373,31 @@ html, body {
 /* Hover fade */
 .hover-swap:hover .og-text { opacity: 0; }
 .hover-swap:hover .sec-text { opacity: 1; }
+
+
+/* peaking out img on hover */
+/* Peek-out preview container */
+/* /* Peek-out preview container */
+.sidebar-peek-preview {
+    position: fixed;
+    left: 22%; /* same as sidebar width */
+    transform: translate(-100%, -50%);
+    opacity: 0;
+
+    width: 150px;
+    pointer-events: none;
+    z-index: 1;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.35s cubic-bezier(.25,.46,.45,.94);
+}
+
+
+.sidebar-peek-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.15); */
+}

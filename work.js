@@ -76,4 +76,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+const previewBox = document.querySelector('.sidebar-peek-preview');
+const previewImg = document.getElementById('peekPreviewImg');
+
+document.querySelectorAll('.sidebar-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        const src = item.getAttribute('data-preview');
+        previewImg.src = src;
+
+        // Get the vertical position of the hovered item
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.top + rect.height / 2;
+
+        // Move preview to align with the text
+        previewBox.style.top = `${itemCenter}px`;
+
+        // Reveal + slide out
+        previewBox.style.opacity = 1;
+        previewBox.style.transform = "translate(0, -50%)";
+    });
+
+    item.addEventListener('mouseleave', () => {
+        previewBox.style.opacity = 0;
+        previewBox.style.transform = "translate(-100%, -50%)";
+    });
+});
+
+
 });
