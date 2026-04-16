@@ -48,6 +48,7 @@ but then running through with ai to fix structure and make everythign work ‚≠ê‚≠
     gap: 2rem;
     padding: 8dvh 2dvh 5dvh 2dvh;
     cursor:none;
+    z-index: 10;
 }
 
 
@@ -166,6 +167,7 @@ but then running through with ai to fix structure and make everythign work ‚≠ê‚≠
 .sidebar-space {
     width: 22%;          /* same as sidebar */
     flex-shrink: 0;
+    z-index: 1;
 }
 
 /* MEDIUM SCREENS ‚Äî increase ghost spacing bar */
@@ -330,51 +332,6 @@ html, body {
 }
 
 
-
-
-/* Prevent layout shift during hover text swap */
-.hover-swap {
-    position: relative;
-    display: inline-block;
-    line-height: 1; /* prevents vertical wobble */
-}
-
-/* Invisible layer that locks the height to the Doto version */
-.hover-swap .size-lock {
-    visibility: hidden;
-    pointer-events: none;
-
-    font-family: "Doto", sans-serif;
-    font-variation-settings: "ROND" 100, "wght" 800;
-    letter-spacing: 3px;
-
-    font: inherit;
-}
-
-/* Fade layers */
-.og-text {
-    transition: opacity 0.05s ease;
-}
-
-.sec-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-
-    font-family: "Doto", sans-serif;
-    font-variation-settings: "ROND" 100, "wght" 800;
-    letter-spacing: 3px;
-
-    transition: opacity 0.05s ease;
-}
-
-/* Hover fade */
-.hover-swap:hover .og-text { opacity: 0; }
-.hover-swap:hover .sec-text { opacity: 1; }
-
-
 /* peaking out img on hover */
 /* Peek-out preview container */
 /* /* Peek-out preview container */
@@ -386,11 +343,20 @@ html, body {
 
     width: 150px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 30;
 
     transition:
         opacity 0.25s ease,
         transform 0.35s cubic-bezier(.25,.46,.45,.94);
+}
+
+/* ai help with all media  */
+@media (max-width: 1300px) and (min-width: 901px) {
+    .sidebar-peek-preview {
+        left: 20%; /* match your medium sidebar width */
+        width: 140px; /* optional: slightly smaller for mid screens */
+        transform: translate(-100%, -50%);
+    }
 }
 
 
@@ -401,3 +367,77 @@ html, body {
     object-fit: cover;
     /* box-shadow: 0 10px 30px rgba(0,0,0,0.15); */
 }
+
+/* ai help overlay */
+.page-overlay {
+    position: fixed;
+    top: 0;
+    left: 22%; /* matches FIXED sidebar width */
+    width: calc(100% - 22%); /* everything to the right */
+    height: 100vh;
+
+    background-color: #1d242f53;
+    /* background: rgba(0,0,0,0.35); */
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+    z-index: 8; 
+/* my side sticky is 10 so this is under */
+}
+
+@media (max-width: 1300px) and (min-width: 901px) {
+    .page-overlay {
+        left: 18%; /* match sidebar width */
+        width: calc(100% - 18%);
+    }
+}
+
+
+
+/* MATCH PAGE 1 SYSTEM EXACTLY */
+.hover-swap {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-swap .og-text,
+.hover-swap .sec-text {
+    display: block;
+    line-height: inherit;
+}
+
+.og-text {
+    transition: opacity 0.05s ease;
+}
+
+.sec-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+
+    font: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+    transition: opacity 0.05s ease;
+}
+
+.hover-swap:hover .og-text { opacity: 0; }
+.hover-swap:hover .sec-text { opacity: 1; }
+
+/* right alignment */
+.row3 a {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+

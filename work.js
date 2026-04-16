@@ -102,5 +102,27 @@ document.querySelectorAll('.sidebar-item').forEach(item => {
     });
 });
 
+const overlay = document.querySelector('.page-overlay');
+
+document.querySelectorAll('.sidebar-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        const imgSrc = item.getAttribute('data-preview');
+        const preview = document.querySelector('.sidebar-peek-preview');
+        const previewImg = document.querySelector('.sidebar-peek-preview img');
+
+        previewImg.src = imgSrc;
+        preview.style.opacity = 1;
+
+        overlay.style.opacity = 1;  // fade overlay in
+    });
+
+    item.addEventListener('mouseleave', () => {
+        const preview = document.querySelector('.sidebar-peek-preview');
+
+        preview.style.opacity = 0;
+        overlay.style.opacity = 0;  // fade overlay out
+    });
+});
+
 
 });

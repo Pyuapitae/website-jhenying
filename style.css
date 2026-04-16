@@ -506,7 +506,8 @@ then i build off and edit to make it work*/
 .work2.active::before,
 .work3.active::before,
 .work4.active::before {
-    background: #4855697a;
+    /* background: #4855697a; */
+    background-color: #1d242f53;
 }
 
 .work2.active .bg-img { opacity: 1; }
