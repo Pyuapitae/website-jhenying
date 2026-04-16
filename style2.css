@@ -101,11 +101,11 @@ but then running through with ai to fix structure and make everythign work ‚≠ê‚≠
 }
 
 
-.work2-p1-name:hover{
+/* .work2-p1-name:hover{
     font-family: "Doto", sans-serif;
     font-variation-settings: "ROND" 100, "wght" 800;
     letter-spacing: 3px;
-}
+} */
 
 /* IMAGES */
 /* Image row */
@@ -328,3 +328,48 @@ html, body {
 .contact:hover ~ .cursor3 {
     opacity: 0;
 }
+
+
+
+
+/* Prevent layout shift during hover text swap */
+.hover-swap {
+    position: relative;
+    display: inline-block;
+    line-height: 1; /* prevents vertical wobble */
+}
+
+/* Invisible layer that locks the height to the Doto version */
+.hover-swap .size-lock {
+    visibility: hidden;
+    pointer-events: none;
+
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 800;
+    letter-spacing: 3px;
+
+    font: inherit;
+}
+
+/* Fade layers */
+.og-text {
+    transition: opacity 0.05s ease;
+}
+
+.sec-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 800;
+    letter-spacing: 3px;
+
+    transition: opacity 0.05s ease;
+}
+
+/* Hover fade */
+.hover-swap:hover .og-text { opacity: 0; }
+.hover-swap:hover .sec-text { opacity: 1; }

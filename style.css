@@ -769,103 +769,135 @@ then i build off and edit to make it work*/
   height: auto !important;
 
 } */
+/* -------------------------
+   SWIPER: LAYOUT + MOBILE OFFSET
+-------------------------- */
 
+/* Mobile offset for the whole swiper */
 @media (max-width: 600px) {
   .gallerySwiper {
     margin-top: -40px; /* adjust to taste */
   }
 }
 
+/* Turn the whole swiper into a vertical stack */
+.gallerySwiper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible !important;
+  position: relative;
+}
 
 /* Wrapper */
 .gallerySwiper .swiper-wrapper {
   display: flex;
   height: auto !important;
+  order: 1;
+  width: 100%;
 }
 
-/* Slides (your original style, no radius) */
+
+/* -------------------------
+   SLIDES: SCALE + RESPONSIVE
+-------------------------- */
+
 /* Base slide */
 .gallerySwiper .swiper-slide {
-    width: clamp(180px, 40vw, 750px) !important;
-    height: auto;
-    aspect-ratio: 8 / 5;
-    object-fit: cover;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    flex-shrink: 0;
-    border-radius: 0;
-    
-    transform-origin: center center; /* prevents vertical expansion ai helped*/
+  width: clamp(180px, 40vw, 750px) !important;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 0;
 
-    /* default small */
-    transform: scale(0.7);
-    transition: transform 0.4s ease;
+  transform-origin: center center; /* prevents vertical expansion */
+  transform: scale(0.7);           /* default small */
+  transition: transform 0.4s ease;
 }
-
-
 
 /* Center slide BIG */
 .gallerySwiper .swiper-slide-active {
-    transform: scale(1.15);
-    z-index: 3;
+  transform: scale(1.15);
+  z-index: 3;
 }
 
 /* Next + previous slides MEDIUM */
 .gallerySwiper .swiper-slide-next,
 .gallerySwiper .swiper-slide-prev {
-    transform: scale(0.85);
-    z-index: 2;
+  transform: scale(0.85);
+  z-index: 2;
 }
 
+/* Mobile slide sizing */
 @media (max-width: 600px) {
-    .gallerySwiper .swiper-slide {
-        width: clamp(260px, 80vw, 420px) !important; /* ⭐ MUCH bigger */
-        transform: scale(0.8); /* default slightly bigger */
-    }
+  .gallerySwiper .swiper-slide {
+    width: clamp(260px, 80vw, 420px) !important; /* bigger */
+    transform: scale(0.8);                       /* default slightly bigger */
+  }
 
-    .gallerySwiper .swiper-slide-active {
-        transform: scale(1.2); /* ⭐ center even bigger */
-    }
+  .gallerySwiper .swiper-slide-active {
+    transform: scale(1.2); /* center even bigger */
+  }
 
-    .gallerySwiper .swiper-slide-next,
-    .gallerySwiper .swiper-slide-prev {
-        transform: scale(0.9); /* ⭐ side slides bigger */
-    }
+  .gallerySwiper .swiper-slide-next,
+  .gallerySwiper .swiper-slide-prev {
+    transform: scale(0.9); /* side slides bigger */
+  }
 }
 
 
-/* Pagination (dots) */
+/* -------------------------
+   PAGINATION: POSITION + STAR
+-------------------------- */
+
+/* Pagination BELOW the slides */
 .gallerySwiper .swiper-pagination {
-  position: absolute;
-  bottom: 10px;   /* ← makes dots visible */
-  left: 0;
+  position: static !important;
+  order: 2;
+  margin-top: 20px;   /* space below images */
   width: 100%;
   text-align: center;
+  z-index: 999;
 }
 
-
+/* Base bullets */
 .swiper-pagination-bullet {
-  background: #000;
-  opacity: 0.4;
-}
-
-.swiper-pagination-bullet-active {
-  background: #000;
+  width: 10px;
+  height: 10px;
+  background: #ccc; /* inactive color */
   opacity: 1;
 }
 
+/* Active bullet becomes a star */
+.swiper-pagination-bullet-active {
+  background: transparent !important;
+  position: relative;
+}
 
-/* .slider-img{
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
-} 
-    this doesnt work bc it gets over power by the slider*/
+.swiper-pagination-bullet-active::after {
+  content: "★";
+  font-size: 24px;
+  color: #3F78AE; /* your blue */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.swiper-pagination-bullet {
+    margin: 0 50px; /* increase spacing */
+}
+
+
+/* -------------------------
+   SLIDE IMAGE SIZING
+-------------------------- */
 
 .gallerySwiper .swiper-slide .slider-img {
   width: 105%;
@@ -884,6 +916,49 @@ then i build off and edit to make it work*/
   height: auto;
   object-fit: cover;
 }
+
+
+/* ai helped make the swiper dots smoother */
+/* Base bullet */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    opacity: 1;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Active bullet container */
+.swiper-pagination-bullet-active {
+    background: transparent !important;
+    position: relative;
+    transform: scale(1.2); /* subtle pop */
+}
+
+/* Star itself */
+.swiper-pagination-bullet-active::after {
+    content: "★";
+    font-size: 16px;
+    color: #3F78AE;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s cubic-bezier(.25,.46,.45,.94);
+}
+
+/* When active, fade + scale star in */
+.swiper-pagination-bullet-active.swiper-pagination-bullet-active::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
 
 
 /* 
