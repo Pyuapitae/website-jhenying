@@ -106,49 +106,64 @@ about.querySelectorAll("a").forEach(link => {
 });
 
 
-//   // ✅ PRELOAD (single system only)
-// const imageSources = [
-//   "age-a-way-of-living.jpg",
-//   "aged-season.jpg",
-//   "branding-work-organize.jpg",
-//   "eat-bread.jpg",
-//   "event-work-organize.jpg",
-//   "house-cookie.png",
-//   "illustration-work-organize.jpg",
-//   "koou-coffee.jpg",
-//   "landing.jpg",
-//   "packing-work-organize.jpg",
-//   "pony-up-the-money.jpg",
-//   "sitting-cookie.png",
-//   "squrrle-cookie.png",
-//   "sweet-2020.jpg",
-//   "temple-cookie.png",
-// ];
+  // ✅ PRELOAD (single system only)
+const imageSources = [
+"public/homepage-images/8.png",
+"public/homepage-images/9.png",
+"public/homepage-images/10.png",
+"public/homepage-images/13.png",
+"public/homepage-images/14.png",
+"public/homepage-images/16.png",
+"public/homepage-images/17.png",
+"public/homepage-images/age-a-way-of-living.jpg",
+"public/homepage-images/aged-season.jpg",
+"public/homepage-images/artisan-interview.jpeg",
+"public/homepage-images/branding-work-organize.jpg",
+"public/homepage-images/eat-bread.jpg",
+"public/homepage-images/event-work-organize.jpg",
+"public/homepage-images/exhibition-jhenying.jpg",
+"public/homepage-images/house-cookie.png",
+"public/homepage-images/illustration-work-organize.jpg",
+"public/homepage-images/jhenying-about-me.jpeg",
+"public/homepage-images/koou-coffee.jpg",
+"public/homepage-images/landing-flash2.jpg",
+"public/homepage-images/landing.jpg",
+"public/homepage-images/packing-work-organize.jpg",
+"public/homepage-images/paper-interview.jpeg",
+"public/homepage-images/pony-up-the-money.jpg",
+"public/homepage-images/sitting-cookie.png",
+"public/homepage-images/spuntnik.jpeg",
+"public/homepage-images/squrrle-cookie.png",
+"public/homepage-images/sweet-2020.jpg",
+"public/homepage-images/temple-cookie.png",
+"public/homepage-images/transform-interview.jpg",
 
-// let loadedImages = 0;
+];
 
-// function preloadImages(images, callback) {
-//   images.forEach(src => {
-//     const img = new Image();
-//     img.src = src;
+let loadedImages = 0;
 
-//     img.onload = img.onerror = () => {
-//       loadedImages++;
-//       if (loadedImages === images.length) {
-//         callback();
-//       }
-//     };
-//   });
-// }
+function preloadImages(images, callback) {
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
 
-// // ✅ Run once
-// preloadImages(imageSources, () => {
-//   const loader = document.getElementById("loader");
+    img.onload = img.onerror = () => {
+      loadedImages++;
+      if (loadedImages === images.length) {
+        callback();
+      }
+    };
+  });
+}
 
-//   loader.style.opacity = 0;
+// ✅ Run once
+preloadImages(imageSources, () => {
+  const loader = document.getElementById("loader");
 
-//   loader.addEventListener("transitionend", () => {
-//     loader.style.display = "none";
-//   });
-// });
+  loader.style.opacity = 0;
+
+  loader.addEventListener("transitionend", () => {
+    loader.style.display = "none";
+  });
+});
   

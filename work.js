@@ -123,6 +123,56 @@ document.querySelectorAll('.sidebar-item').forEach(item => {
         overlay.style.opacity = 0;  // fade overlay out
     });
 });
+const imageSources = [
+"public/work-2/eat-bread1.jpg",
+"public/work-2/eat-bread2.jpg",
+"public/work-2/eat-bread3.jpg",
+"public/work-2/forest-animal-sweet1.jpeg",
+"public/work-2/forest-animal-sweet2.jpg",
+"public/work-2/forest-animal-sweet3.jpg",
+"public/work-2/kakuha1.jpg",
+"public/work-2/kakuha2.jpg",
+"public/work-2/kakuha3.jpg",
+"public/work-2/loto-banana1.jpg",
+"public/work-2/loto-banana2.jpg",
+"public/work-2/loto-banana3.jpg",
+"public/work-2/oatgood1.jpg",
+"public/work-2/oatgood2.jpg",
+"public/work-2/oatgood3.jpg",
+"public/work-2/yangmei1.jpg",
+"public/work-2/yangmei2.jpg",
+"public/work-2/yangmei3.jpg",
+"public/work-2/ziji-tang-tea1.jpg",
+"public/work-2/ziji-tang-tea2.jpg",
+"public/work-2/ziji-tang-tea3.jpg",
+];
 
+let loadedImages = 0;
+
+function preloadImages(images, callback) {
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+
+    img.onload = img.onerror = () => {
+      loadedImages++;
+      if (loadedImages === images.length) {
+        callback();
+      }
+    };
+  });
+}
+
+// ✅ Run once
+preloadImages(imageSources, () => {
+  const loader = document.getElementById("loader");
+
+  loader.style.opacity = 0;
+
+  loader.addEventListener("transitionend", () => {
+    loader.style.display = "none";
+  });
+});
+  
 
 });
