@@ -22,7 +22,11 @@
 } */
 
 
-
+p{
+     max-width: 800px;
+     /* 800-850 is typical 
+     smaller go full */
+}
 
 /* disclaimer-> this work page and linking of things are mainly designed 
 but then running through with ai to fix structure and make everythign work ⭐⭐⭐*/

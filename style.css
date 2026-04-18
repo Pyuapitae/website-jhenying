@@ -30,8 +30,9 @@
     box-sizing: border-box;
     background-color: #EEEEEE;
     color:#3F78AE;
-    z-index: 100;
+    z-index: 1000;
     font-family: "Lexend", sans-serif;
+
 }
 
 .header a {
@@ -74,7 +75,7 @@
     --nav-size: clamp(12px, 1.5vw, 16px);
     --divider-size: clamp(100px, 3.5vw, 12%);
 }
-/* helped by chat gbt */
+/* numbers helped by chat gbt */
 
 
 /* ================================
@@ -101,12 +102,12 @@
 }
 
 /* ================================
-   ONE UNIFIED LOOP (3.264s)
+   ONE UNIFIED LOOP (5s)
    ================================ */
 
 /* BG1: fast section ai*/
 .bg-1 {
-    animation: bg1 3.264s linear infinite;
+    animation: bg1 5s linear infinite;
 }
 
 @keyframes bg1 {
@@ -116,7 +117,7 @@
 
 /* BG2: slow section */
 .bg-2 {
-    animation: bg2 3.264s linear infinite;
+    animation: bg2 5s linear infinite;
 }
 
 @keyframes bg2 {
@@ -135,7 +136,7 @@
 }
 
 .p1, .p2, .p3 {
-    animation: popSequence 3.264s linear infinite;
+    animation: popSequence 5s linear infinite;
 }
 
 /* ================================
@@ -247,6 +248,14 @@ body {
 } */
 
 
+
+
+/* here I want to have java implicated so jump start it would have the first work 
+displaying (white, bolded, and shift to right)
+and the rest are grayed out indicate user can choose 
+
+ai was able to help below for all the display
+*/
 .displaytext{
     font-family: "Lexend", sans-serif;
     font-size: var(--logo-size);
@@ -259,15 +268,8 @@ body {
     padding-top: 5dvh;
     transition: 0.3s ease-in-out;
     transform: translateX(0); 
+    cursor:pointer;
 }
-
-
-/* here I want to have java implicated so jump start it would have the first work 
-displaying (white, bolded, and shift to right)
-and the rest are grayed out indicate user can choose 
-
-ai was able to help below for all the display
-*/
 
 .displaytext .item {
     color: rgba(255, 255, 255, 0.5);
@@ -287,19 +289,19 @@ ai was able to help below for all the display
     font-weight: 700;
     transform: translateX(5%);
 }
-
+/* 
 .displaytext:hover .item {
     color: rgba(255, 255, 255, 0.5);
     font-weight: 400;
     transform: translateX(0);
-}
+} */
 
 
-.displaytext .item:hover {
+/* .displaytext .item:hover {
     color: rgb(255, 255, 255);
     font-weight: 700;
     transform: translateX(5%);
-}
+} */
 
 .preview {
     width: 60%;
@@ -451,6 +453,8 @@ then i build off and edit to make it work*/
     min-height: 90dvh;
     flex-direction: row;
     justify-content: space-between;
+
+    cursor:pointer;
 }
 
 
@@ -858,33 +862,33 @@ then i build off and edit to make it work*/
 -------------------------- */
 
 /* Pagination BELOW the slides */
+
 .gallerySwiper .swiper-pagination {
   position: static !important;
   order: 2;
-  margin-top: 20px;   /* space below images */
+  margin-top: 20px;  
   width: 100%;
   text-align: center;
   z-index: 999;
 }
 
-/* Base bullets */
+
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: #ccc; /* inactive color */
+  background: #ccc;
   opacity: 1;
 }
 
-/* Active bullet becomes a star */
+
 .swiper-pagination-bullet-active {
   background: transparent !important;
   position: relative;
 }
 
 .swiper-pagination-bullet-active::after {
-  content: "★";
   font-size: 24px;
-  color: #3F78AE; /* your blue */
+  color: #3F78AE;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -892,7 +896,7 @@ then i build off and edit to make it work*/
 }
 
 .swiper-pagination-bullet {
-    margin: 0 50px; /* increase spacing */
+    margin: 0 50px;
 }
 
 
@@ -926,38 +930,33 @@ then i build off and edit to make it work*/
     height: 10px;
     background: #ccc;
     opacity: 1;
+    border-radius: 50%; /* ← added so dots stay round */
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 /* Active bullet container */
 .swiper-pagination-bullet-active {
-    background: transparent !important;
+    background: #3F78AE !important; /* ← changed from transparent to your blue */
     position: relative;
     transform: scale(1.2); /* subtle pop */
 }
 
 /* Star itself */
 .swiper-pagination-bullet-active::after {
-    content: "★";
-    font-size: 16px;
-    color: #3F78AE;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.6);
+    content: none !important; /* ← removed star */
+    width: 0;                 /* ← prevents ghost box */
+    height: 0;
     opacity: 0;
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s cubic-bezier(.25,.46,.45,.94);
+    transform: none;
+    transition: none;
 }
 
 /* When active, fade + scale star in */
 .swiper-pagination-bullet-active.swiper-pagination-bullet-active::after {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+    content: none !important; /* ← ensures no star ever appears */
+    opacity: 0;
+    transform: none;
 }
-
 
 
 
@@ -1328,6 +1327,7 @@ then i build off and edit to make it work*/
 .hover-swap {
     position: relative;
     display: inline-block;
+
 }
 
 /* ORIGINAL TEXT */
@@ -1349,6 +1349,7 @@ then i build off and edit to make it work*/
 
     white-space: nowrap;
     transition: opacity 0.2s ease;
+
 }
 
 /* =========================
@@ -1358,6 +1359,7 @@ then i build off and edit to make it work*/
 .hover-swap {
     position: relative;
     display: inline-block;
+    
 }
 
 /* both layers share SAME layout */
@@ -1365,6 +1367,16 @@ then i build off and edit to make it work*/
 .hover-swap .sec-text {
     display: block;
     line-height: inherit;
+}
+
+/* neutralize the actual anchor ai help*/
+.hover-swap a,
+.hover-swap a:link,
+.hover-swap a:visited,
+.hover-swap a:hover,
+.hover-swap a:active {
+    color: inherit !important;
+    text-decoration: none !important;
 }
 
 /* original */
@@ -1392,6 +1404,7 @@ then i build off and edit to make it work*/
 
     white-space: nowrap;
     transition: opacity 0.05s ease;
+    text-decoration: none;
 }
 
 /* hover trigger */

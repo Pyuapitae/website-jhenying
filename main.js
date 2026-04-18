@@ -1,40 +1,113 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* SHOWCASE LOGIC */
-  const items = document.querySelectorAll('.item');
-  const preview = document.getElementById('preview-img');
 
-  let activeItem = document.querySelector('.item.active');
+  /* -------------------------------------------
+     SHOWCASE — HOVER + CLICK LOGIC (your original)
+  -------------------------------------------- */
+/* SHOWCASE — HOVER LOCK LOGIC */
+const items = document.querySelectorAll('.item');
+const preview = document.getElementById('preview-img');
 
-  function changeImage(item) {
-    const newImg = item.dataset.image;
-    preview.style.opacity = 0;
+let activeItem = document.querySelector('.item.active');
 
-    setTimeout(() => {
-      preview.src = newImg;
-      preview.style.opacity = 1;
-    }, 150);
-  }
+function changeImage(item) {
+  const newImg = item.dataset.image;
+  preview.style.opacity = 0;
 
-  items.forEach(item => {
-    item.addEventListener('mouseenter', () => changeImage(item));
+  setTimeout(() => {
+    preview.src = newImg;
+    preview.style.opacity = 1;
+  }, 150);
+}
 
-    item.addEventListener('click', () => {
-      items.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-      activeItem = item;
-      changeImage(item);
+items.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    stopAuto(); // pause auto-cycle
+
+    items.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+    activeItem = item;
+
+    changeImage(item);
+  });
+});
+
+
+
+  /* -------------------------------------------
+     SHOWCASE — AUTO‑CYCLE LOGIC (fixed + working)
+  -------------------------------------------- */
+
+  const displayItems = document.querySelectorAll(".displaytext .item");
+  const displayText = document.querySelector(".displaytext");
+
+  if (displayItems.length) {
+    let index = [...displayItems].findIndex(item => item.classList.contains("active"));
+    if (index === -1) index = 0;
+
+    let interval;
+
+    function activateItem(i) {
+        displayItems.forEach(item => item.classList.remove("active"));
+        const current = displayItems[i];
+        current.classList.add("active");
+
+        preview.style.opacity = 0;
+        setTimeout(() => {
+            preview.src = current.dataset.image;
+            preview.style.opacity = 1;
+        }, 200);
+    }
+
+    function startAuto() {
+        interval = setInterval(() => {
+            index = (index + 1) % displayItems.length;
+            activateItem(index);
+        }, 1800); // 1.8 second
+    }
+
+    function stopAuto() {
+        clearInterval(interval);
+    }
+
+    // Start auto‑cycle
+    activateItem(index);
+    startAuto();
+
+    // Pause on hover
+    displayText.addEventListener("mouseenter", stopAuto);
+
+    // Resume on leave
+    displayText.addEventListener("mouseleave", () => {
+        index = [...displayItems].findIndex(item => item.classList.contains("active"));
+        if (index === -1) index = 0;
+        startAuto();
     });
 
-    item.addEventListener('mouseleave', () => changeImage(activeItem));
-  });
+    // Manual hover overrides auto
+    displayItems.forEach((item, i) => {
+        item.addEventListener("mouseenter", () => {
+            stopAuto();
+            index = i;
+            activateItem(i);
+        });
+    });
+  }
 
-  /* SWIPER INIT — properly closed */
+
+  /* -------------------------------------------
+     SWIPER INIT
+  -------------------------------------------- */
   const gallerySwiper = new Swiper(".gallerySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
     loop: true,
     slidesPerView: "auto",
+
+    autoplay: {
+    delay: 3000,               // ← 3 seconds
+    disableOnInteraction: false
+  },
 
     coverflowEffect: {
       rotate: 0,
@@ -50,63 +123,71 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-const works = document.querySelectorAll('.work1, .work2, .work3, .work4');
 
-// Make work2 active on load
-let activeWork = document.querySelector('.work2');
-activeWork.classList.add('active');
+  /* -------------------------------------------
+     WORK HOVER LOGIC
+  -------------------------------------------- */
+  const works = document.querySelectorAll('.work1, .work2, .work3, .work4');
 
-works.forEach(work => {
-    work.addEventListener('mouseenter', () => {
-        works.forEach(w => w.classList.remove('active'));
-        work.classList.add('active');
-        activeWork = work; // update the last active
-    });
+  let activeWork = document.querySelector('.work2');
+  activeWork.classList.add('active');
+
+  works.forEach(work => {
+      work.addEventListener('mouseenter', () => {
+          works.forEach(w => w.classList.remove('active'));
+          work.classList.add('active');
+          activeWork = work;
+      });
+  });
+
+
+  /* -------------------------------------------
+     CURSOR LOGIC — LANDING
+  -------------------------------------------- */
+  const landing = document.querySelector(".landing");
+  const cursor = document.querySelector(".cursor");
+
+  landing.addEventListener("mousemove", (e) => {
+    cursor.style.opacity = 1;
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+  landing.addEventListener("mouseleave", () => {
+    cursor.style.opacity = 0;
+  });
+
+  landing.querySelectorAll("a").forEach(link => {
+    link.addEventListener("mouseenter", () => cursor.classList.add("grow"));
+    link.addEventListener("mouseleave", () => cursor.classList.remove("grow"));
+  });
+
+
+  /* -------------------------------------------
+     CURSOR LOGIC — ABOUT
+  -------------------------------------------- */
+  const about = document.querySelector(".about");
+  const cursor2 = document.querySelector(".cursor2");
+
+  about.addEventListener("mousemove", (e) => {
+    cursor2.style.opacity = 1;
+    cursor2.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+  about.addEventListener("mouseleave", () => {
+    cursor2.style.opacity = 0;
+  });
+
+  about.querySelectorAll("a").forEach(link => {
+    link.addEventListener("mouseenter", () => cursor2.classList.add("grow"));
+    link.addEventListener("mouseleave", () => cursor2.classList.remove("grow"));
+  });
+
 });
-const landing = document.querySelector(".landing");
-const cursor = document.querySelector(".cursor");
-
-landing.addEventListener("mousemove", (e) => {
-  cursor.style.opacity = 1;
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-
-landing.addEventListener("mouseleave", () => {
-  cursor.style.opacity = 0; // hide when leaving landing page
-});
 
 
-landing.querySelectorAll("a").forEach(link => {
-  link.addEventListener("mouseenter", () => cursor.classList.add("grow"));
-  link.addEventListener("mouseleave", () => cursor.classList.remove("grow"));
-});
-
-
-
-
-const about = document.querySelector(".about");
-const cursor2 = document.querySelector(".cursor2");
-
-about.addEventListener("mousemove", (e) => {
-  cursor2.style.opacity = 1;
-  cursor2.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
-
-about.addEventListener("mouseleave", () => {
-  cursor2.style.opacity = 0; // hide when leaving landing page
-});
-
-
-about.querySelectorAll("a").forEach(link => {
-  link.addEventListener("mouseenter", () => cursor2.classList.add("grow"));
-  link.addEventListener("mouseleave", () => cursor2.classList.remove("grow"));
-});
-
-
-});
-
-
-  // ✅ PRELOAD (single system only)
+/* -------------------------------------------
+   PRELOAD (your original, untouched)
+-------------------------------------------- */
 const imageSources = [
 "public/homepage-images/8.png",
 "public/homepage-images/9.png",
@@ -137,7 +218,6 @@ const imageSources = [
 "public/homepage-images/sweet-2020.jpg",
 "public/homepage-images/temple-cookie.png",
 "public/homepage-images/transform-interview.jpg",
-
 ];
 
 let loadedImages = 0;
@@ -156,7 +236,6 @@ function preloadImages(images, callback) {
   });
 }
 
-// ✅ Run once
 preloadImages(imageSources, () => {
   const loader = document.getElementById("loader");
 
@@ -166,4 +245,6 @@ preloadImages(imageSources, () => {
     loader.style.display = "none";
   });
 });
-  
+
+
+
