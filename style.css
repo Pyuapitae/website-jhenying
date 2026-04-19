@@ -1,11 +1,9 @@
-/* STYLE AND FONTS */
 .lexend-uniquifier {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
 }
-
 
 .doto-uniquifier {
   font-family: "Doto", sans-serif;
@@ -16,7 +14,6 @@
     "ROND" 100,
     "wght" 400;
 }
-
 
 .header {
     position: fixed;
@@ -40,7 +37,6 @@
     color: inherit;
     font-weight: 600;
 }
-
 
 .navbar {
     display: flex;
@@ -78,9 +74,6 @@
 /* numbers helped by chat gbt */
 
 
-/* ================================
-   LANDING BASE
-   ================================ */
 .landing {
     width: 100%;
     height: 100dvh;
@@ -90,7 +83,6 @@
     cursor: none;
 }
 
-/* Background images */
 .bg {
     position: absolute;
     inset: 0;
@@ -101,21 +93,16 @@
     z-index: 1;
 }
 
-/* ================================
-   ONE UNIFIED LOOP (5s)
-   ================================ */
-
 /* BG1: fast section ai*/
 .bg-1 {
     animation: bg1 5s linear infinite;
 }
 
 @keyframes bg1 {
-    0%, 32% { opacity: 1; }     /* fast BG1 */
+    0%, 32% { opacity: 1; } 
     32.01%, 100% { opacity: 0; }
 }
 
-/* BG2: slow section */
 .bg-2 {
     animation: bg2 5s linear infinite;
 }
@@ -124,10 +111,6 @@
     0%, 32% { opacity: 0; }
     32.01%, 100% { opacity: 1; } /* BG2 stays until the end */
 }
-
-/* ================================
-   POP IMAGES (slowed 0.75×)
-   ================================ */
 
 /* Pops start at 56.6% and end at 100% */
 @keyframes popSequence {
@@ -139,9 +122,6 @@
     animation: popSequence 5s linear infinite;
 }
 
-/* ================================
-   POP GROUP LAYOUT
-   ================================ */
 .pop-group {
     position: absolute;
     bottom: 25%;
@@ -156,17 +136,6 @@
     opacity: 0;
     width: clamp(100px, 20vw, 320px);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ai helped boiler for cursor */
@@ -194,17 +163,9 @@
     opacity: 0; /* start hidden */
 }
 
-
-
-
-
-
-
-
 body {
     margin: 0;
 }
-
 
 .showcase{
     display:flex;
@@ -221,34 +182,6 @@ body {
     grid-template-rows: auto auto; /* Defines two rows google auto ai helped*/
     gap: 10%;  /*set gap of the bottom two div */
 }
-/* 
-.displaytextup .title{
-    font-family: "Lexend", sans-serif;
-    font-size: var(--big-size);
-    font-weight: 600;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6%;
-
-    transition: 0.3s ease-in-out;
-}
-.displaytextup .number{
-    font-family: "Lexend", sans-serif;
-    font-size: var(--big-size);
-    font-weight: 600;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6%;
-
-    transition: 0.3s ease-in-out;
-} */
-
-
-
 
 /* here I want to have java implicated so jump start it would have the first work 
 displaying (white, bolded, and shift to right)
@@ -289,19 +222,6 @@ ai was able to help below for all the display
     font-weight: 700;
     transform: translateX(5%);
 }
-/* 
-.displaytext:hover .item {
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 400;
-    transform: translateX(0);
-} */
-
-
-/* .displaytext .item:hover {
-    color: rgb(255, 255, 255);
-    font-weight: 700;
-    transform: translateX(5%);
-} */
 
 .preview {
     width: 60%;
@@ -320,16 +240,10 @@ ai was able to help below for all the display
 }
 
 
-
-
-
-
-
 /* .home {
     margin: 0;
     padding: 0;
 }
-
 .landing{
     position: fixed;
     width: 100vw;
@@ -341,9 +255,8 @@ ai was able to help below for all the display
     overflow: hidden;
 }*/
 
-
-
 /* cookie section below */
+
 /* .divider{
     justify-content: center;
     align-items: center; 
@@ -419,9 +332,6 @@ ai was able to help below for all the display
 }
 
 
-
-
-
 /* chat gbt modified below (deleted original cuz it's showing up as red error for some reason) 
 then i build off and edit to make it work*/
 
@@ -481,7 +391,6 @@ then i build off and edit to make it work*/
 }
 
 
-/* Hover state text change*/
 .work1:hover,
 .work2:hover,
 .work3:hover,
@@ -510,14 +419,13 @@ then i build off and edit to make it work*/
 .work2.active::before,
 .work3.active::before,
 .work4.active::before {
-    /* background: #4855697a; */
     background-color: #1d242f53;
 }
 
 .work2.active .bg-img { opacity: 1; }
 
 
-/* Background image (hidden by default) */
+/* Background image (hidden by default) ai helped*/
 .bg-img {
     position: absolute;
     inset: 0;
@@ -530,7 +438,6 @@ then i build off and edit to make it work*/
     pointer-events: none;
 }
 
-/* Fade image in on hover */
 .work1:hover .bg-img,
 .work2:hover .bg-img,
 .work3:hover .bg-img,
@@ -551,7 +458,6 @@ then i build off and edit to make it work*/
     z-index: 0;
 }
 
-/* the overlay */
 .work1:hover::before,
 .work2:hover::before,
 .work3:hover::before,
@@ -559,7 +465,6 @@ then i build off and edit to make it work*/
     background:#4855697a;
 }
 
-/* this shows img */
 .work1:hover,
 .work2:hover,
 .work3:hover,
@@ -567,14 +472,13 @@ then i build off and edit to make it work*/
     z-index:3;
 }
 
-/* text box  */
 .displaytextup2{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 6%;
 }
-/* upper text */
+
 .displaytextup2 .title,
 .displaytextup2 .number{
     font-family: "Lexend", sans-serif;
@@ -582,8 +486,6 @@ then i build off and edit to make it work*/
     font-weight: 600;
     z-index: 4; 
 }
-
-
 
 /* changes font when hover on the 4 catergory to indicate click? */
 /* .displaytextup2 .title:hover{
@@ -598,7 +500,6 @@ then i build off and edit to make it work*/
     font-weight: 600;
     z-index: 4;
 }
-
 
 
 /* ai help with responsive formatting below */
@@ -638,41 +539,14 @@ then i build off and edit to make it work*/
 }
 
 
-
-
-
-/* 
-
-.about {
-    display: flex;
-    width: 100%;
-    padding-bottom: 10vh; 
-}
-
-.about-content {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 3vh;
-}
-
-.about-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-} */
-
-
 .about {
     display: flex;
     width: 100%;
     padding-bottom: 10vh;
-    align-items: stretch;      /* forces equal height */
+    align-items: stretch;      /* forces equal height ai*/
     /* gap: 4vw; */
 }
 
-/* LEFT SIDE — IMAGE */
 .about-content {
     flex: 1;
     display: flex;
@@ -684,7 +558,6 @@ then i build off and edit to make it work*/
     object-fit: cover;
 }
 
-/* RIGHT SIDE — SOLID BLOCK */
 .about-text {
     flex: 1;
     color: #3F78AE;
@@ -697,87 +570,6 @@ then i build off and edit to make it work*/
     font-size: clamp(16px, 3.5vw, 40px);
 }
 
-
-
-/* .work1:, .work2, .work3, .work4 :before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--img);
-    background-size: cover;
-    background-position: center;
-
-    opacity: 0;
-    transition: 0.4s;
-}
-
-
-.work.active{
-    flex: 2;
-    color: rgb(0, 255, 179);
-}
-
-.work.active::before{
-    opacity: 1;
-}
-
-
-.organize-work .work:not(.active){
-    flex: 0.8;
-}
-
-.work > *{
-    position: relative;
-    z-index: 2;
-}
- */
-
-
-/* .displaytextup2 .title, .number{
-    font-family: "Lexend", sans-serif;
-    font-size: var(--big-size);
-    font-weight: 600;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6%;
-
-    transition: 0.3s ease-in-out;
-} */
-/* .bottom{
-    font-family: "Lexend", sans-serif;
-    font-size: var(--logo-size);
-    font-weight: 600;
-    display: flex;
-    align-items: flex-end;
-} */
-/* .work1{
-    width: 25%;
-    overflow: hidden;
-    font-family: "Lexend", sans-serif;
-    font-size: var(--big-size);
-    font-weight: 600;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6%;
-
-    transition: 0.3s ease-in-out;
-} */
-
-/* Container */
-/* .gallerySwiper {
-  margin: 0 auto;
-  padding: 0px;
-  position: relative;
-  height: auto !important;
-
-} */
-/* -------------------------
-   SWIPER: LAYOUT + MOBILE OFFSET
--------------------------- */
-
 /* Mobile offset for the whole swiper */
 @media (max-width: 600px) {
   .gallerySwiper {
@@ -785,7 +577,7 @@ then i build off and edit to make it work*/
   }
 }
 
-/* Turn the whole swiper into a vertical stack */
+/* Turn the whole swiper into a vertical stack ai */
 .gallerySwiper {
   display: flex;
   flex-direction: column;
@@ -794,7 +586,7 @@ then i build off and edit to make it work*/
   position: relative;
 }
 
-/* Wrapper */
+/* Wrapper ai*/
 .gallerySwiper .swiper-wrapper {
   display: flex;
   height: auto !important;
@@ -803,11 +595,7 @@ then i build off and edit to make it work*/
 }
 
 
-/* -------------------------
-   SLIDES: SCALE + RESPONSIVE
--------------------------- */
-
-/* Base slide */
+/* Base slide ai helped*/
 .gallerySwiper .swiper-slide {
   width: clamp(180px, 40vw, 750px) !important;
   height: auto;
@@ -857,12 +645,6 @@ then i build off and edit to make it work*/
 }
 
 
-/* -------------------------
-   PAGINATION: POSITION + STAR
--------------------------- */
-
-/* Pagination BELOW the slides */
-
 .gallerySwiper .swiper-pagination {
   position: static !important;
   order: 2;
@@ -872,7 +654,6 @@ then i build off and edit to make it work*/
   z-index: 999;
 }
 
-
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
@@ -880,11 +661,11 @@ then i build off and edit to make it work*/
   opacity: 1;
 }
 
-
 .swiper-pagination-bullet-active {
   background: transparent !important;
   position: relative;
 }
+/* ai helped */
 
 .swiper-pagination-bullet-active::after {
   font-size: 24px;
@@ -900,10 +681,7 @@ then i build off and edit to make it work*/
 }
 
 
-/* -------------------------
-   SLIDE IMAGE SIZING
--------------------------- */
-
+/* below ai helped sizing */
 .gallerySwiper .swiper-slide .slider-img {
   width: 105%;
   height: auto;
@@ -958,9 +736,6 @@ then i build off and edit to make it work*/
     transform: none;
 }
 
-
-
-
 /* 
 .invite {
     display: flex;
@@ -1001,7 +776,6 @@ then i build off and edit to make it work*/
     cursor: none;
 }
 
-
 .about-text {
     width: 50%;
     background-color: #ffffff;
@@ -1011,7 +785,6 @@ then i build off and edit to make it work*/
     justify-content: center;
     gap: 2rem;
 }
-
 
 .about-content {
     width: 50%;
@@ -1069,9 +842,6 @@ then i build off and edit to make it work*/
     font-size: clamp(12px, 1.6vw, 20px);
     line-height: 1.6;
 }
-
-/* ai helped */
-
 
 
 .displaytextup {
@@ -1156,6 +926,161 @@ then i build off and edit to make it work*/
         transform: rotate(-1deg);
     }
 }
+
+.contact {
+    display: flex;
+    width: 100%;
+    margin-top: 10dvh;
+    padding: 5dvh 5% 3dvh 5%;
+    background-color: #3F78AE;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-sizing: border-box;
+}
+
+/* ROW LAYOUT */
+.contact .row1,
+.contact .row2,
+.contact .row3 {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2vw, 12px);
+}
+
+
+/* HERE IS AI HELP MAKE MY IG AND FB ALIGN RIGHT */
+.row3 a {
+    display: block;
+    width: 100%;
+    text-align: right;
+}
+
+/* .hover-swap-right .sec-text {
+    right: 0;
+    left: auto;
+    text-align: right;
+} */
+
+
+.contact a {
+    text-decoration: none;
+    color: #EEEEEE;
+    font-family: "Lexend", sans-serif;
+    font-weight: 500;
+    font-size: var(--nav-size);
+    position: relative;
+    display: inline-block;
+}
+
+/* HOVER SWAP CONTAINER ai helped*/
+.hover-swap {
+    position: relative;
+    display: inline-block;
+
+}
+
+
+.og-text {
+    transition: opacity 0.2s ease;
+}
+
+.sec-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    font-size: inherit;
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+
+}
+
+
+.hover-swap {
+    position: relative;
+    display: inline-block;
+    
+}
+
+/* both layers share SAME layout */
+.hover-swap .og-text,
+.hover-swap .sec-text {
+    display: block;
+    line-height: inherit;
+}
+
+/* neutralize the actual anchor ai help*/
+.hover-swap a,
+.hover-swap a:link,
+.hover-swap a:visited,
+.hover-swap a:hover,
+.hover-swap a:active {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+/* original */
+.og-text {
+    transition: opacity 0.05s ease;
+}
+
+/* hover version */
+.sec-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+
+    font-family: "Doto", sans-serif;
+    font-variation-settings: "ROND" 100, "wght" 600;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+    transition: opacity 0.05s ease;
+    text-decoration: none;
+}
+
+
+.hover-swap:hover .og-text {
+    opacity: 0;
+}
+
+.hover-swap:hover .sec-text {
+    opacity: 1;
+}
+
+
+
+html{
+    overflow-x: hidden;
+    scroll-padding-top: 100px; /* adjust to match your header height ai tip*/
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #EEEEEE;  
+}
+
+
+/* #loader {
+  position: fixed;
+  inset: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+} */
 
 
 /* .deco-plate:hover, .deco-plate2:hover{
@@ -1276,166 +1201,4 @@ then i build off and edit to make it work*/
 .hover-swap:hover .new-font {
   opacity: 1;
 } my try didnt work below ai helped*/
-
-.contact {
-    display: flex;
-    width: 100%;
-    margin-top: 10dvh;
-    padding: 5dvh 5% 3dvh 5%;
-    background-color: #3F78AE;
-    justify-content: space-between;
-    align-items: flex-end;
-    box-sizing: border-box;
-}
-
-/* ROW LAYOUT */
-.contact .row1,
-.contact .row2,
-.contact .row3 {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(12px, 2vw, 12px);
-}
-
-
-/* HERE IS AI HELP MAKE MY IG AND FB ALIGN RIGHT */
-.row3 a {
-    display: block;
-    width: 100%;
-    text-align: right;
-}
-
-/* .hover-swap-right .sec-text {
-    right: 0;
-    left: auto;
-    text-align: right;
-} */
-
-
-/* LINK BASE STYLE */
-.contact a {
-    text-decoration: none;
-    color: #EEEEEE;
-    font-family: "Lexend", sans-serif;
-    font-weight: 500;
-    font-size: var(--nav-size);
-    position: relative;
-    display: inline-block;
-}
-
-/* HOVER SWAP CONTAINER */
-.hover-swap {
-    position: relative;
-    display: inline-block;
-
-}
-
-/* ORIGINAL TEXT */
-.og-text {
-    transition: opacity 0.2s ease;
-}
-
-/* HOVER TEXT */
-.sec-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-
-    font-size: inherit;
-    font-family: "Doto", sans-serif;
-    font-variation-settings: "ROND" 100, "wght" 600;
-    letter-spacing: 0.5px;
-
-    white-space: nowrap;
-    transition: opacity 0.2s ease;
-
-}
-
-/* =========================
-   GLOBAL FONT SWAP SYSTEM
-   ========================= */
-
-.hover-swap {
-    position: relative;
-    display: inline-block;
-    
-}
-
-/* both layers share SAME layout */
-.hover-swap .og-text,
-.hover-swap .sec-text {
-    display: block;
-    line-height: inherit;
-}
-
-/* neutralize the actual anchor ai help*/
-.hover-swap a,
-.hover-swap a:link,
-.hover-swap a:visited,
-.hover-swap a:hover,
-.hover-swap a:active {
-    color: inherit !important;
-    text-decoration: none !important;
-}
-
-/* original */
-.og-text {
-    transition: opacity 0.05s ease;
-}
-
-/* hover version */
-.sec-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-
-    /* 🔥 THIS keeps EVERYTHING identical */
-    font: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-
-    /* only change font */
-    font-family: "Doto", sans-serif;
-    font-variation-settings: "ROND" 100, "wght" 600;
-    letter-spacing: 0.5px;
-
-    white-space: nowrap;
-    transition: opacity 0.05s ease;
-    text-decoration: none;
-}
-
-/* hover trigger */
-.hover-swap:hover .og-text {
-    opacity: 0;
-}
-
-.hover-swap:hover .sec-text {
-    opacity: 1;
-}
-
-/* GENERAL STUFF */
-
-html{
-    overflow-x: hidden;
-    scroll-padding-top: 100px; /* adjust to match your header height ai tip*/
-    scroll-behavior: smooth;
-}
-
-body{
-    background-color: #EEEEEE;  
-}
-
-
-/* #loader {
-  position: fixed;
-  inset: 0;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-} */
 

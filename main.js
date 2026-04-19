@@ -246,5 +246,5 @@ preloadImages(imageSources, () => {
   });
 });
 
-
+// disclaimer, most of the java script was done with the help of ai
 
